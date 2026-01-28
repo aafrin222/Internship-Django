@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reciepe</title>
+</head>
+<body>
+    <h1>Reciepe</h1>
+    <h2>Name : {{ name }} </h2>
+    <h2>Time : {{ time }} Min</h2>
+    <h2>Ingredient : 
+    {% for i in ingredient %}
+        <h3 style="margin-left: 80px;"> {{i}} </h3>
+    {% endfor %}
+
+    <h1>If Condition : </h1>
+    {% if time <= 2 %}
+        <h3>Reciepe is easy</h3>
+        {%else%}
+        <h3>Reciepe is hard</h3>
+    {% endif %}
+</body>
+</html>

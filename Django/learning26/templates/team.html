@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team</title>
+</head>
+<body>
+   <h1>Team</h1>
+   <h2>Team name : {{name}}</h2>
+   <h2>Captain name : {{Capname}}</h2>
+   <h2>Number of Trophy : {{Trophy}}</h2>
+   <h2>PlayerList : 
+    {% for i in PlayerList %}
+        <h3 style="margin-left: 80px;">{{i}}</h3>
+    {% endfor %}
+
+    {% if Trophy <= 2 %}
+        <h3>Team is Weak </h3>
+        {% else %}
+        <h3>Team is Strong</h3>
+    {% endif %}
+   </h2>
+</body>
+</html>
