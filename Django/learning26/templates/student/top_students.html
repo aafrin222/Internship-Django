@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Students</title>
+</head>
+<body>
+    <h2>Top Students</h2>
+    {% for s in toppers %}
+        <p>{{s.name}} - {{s.marks}}</p>
+    {% endfor %}
+</body>
+</html>
