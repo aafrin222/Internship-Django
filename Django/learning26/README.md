@@ -17,8 +17,16 @@
 - Performed database migration
 - Inserted data into tables
 
-## Day 4 – 03 February 2026
+## Day 4 –Django PostgreSQL integration
 - Implemented Student module
 - Created student-related views
 - Used Python if-else and for loop concepts
 - Displayed student list, passed students, and top students
+
+## Day 5 – Django Models & Admin
+
+- Created new Django model (Course)
+- Worked with multiple models in models.py
+- Registered models in Django Admin
+- Learned how to insert data into tables using Admin Panel
+
