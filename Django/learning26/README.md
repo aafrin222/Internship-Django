@@ -30,3 +30,14 @@
 - Registered models in Django Admin
 - Learned how to insert data into tables using Admin Panel
 
+## Day 6 – Django Model Relationships & Database Design
+
+- Implemented Category–Service module using ForeignKey relationship
+- Created One-to-One relationship between Customer and CustomerProfile
+- Developed One-to-Many relationship using BookCategory and Book models
+- Implemented Many-to-Many relationship between Movie and Actor
+- Understood relational database concepts in Django
+- Improved database design and multi-model handling skills
+
+
+
