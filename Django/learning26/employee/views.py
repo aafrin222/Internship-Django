@@ -1,5 +1,7 @@
-from django.shortcuts import render
-from.models import Employee
+from django.shortcuts import render,redirect
+from.models import Employee,Course,Department,Project
+from .forms import EmployeeForm, CourseForm,DepartmentForm,ProjectForm
+from django.contrib import messages
 # Create your views here.
 
 def employee_list(request):
@@ -93,4 +95,88 @@ def employeeFilter(request):
     }
 
     return render(request, "employee/employeeFilter.html", context)
+
+
+
+
+
+
+
+# -------- CREATE EMPLOYEE --------
+def create_employee(request):
+    if request.method == "POST":
+        form = EmployeeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Employee Created Successfully!")
+            return redirect("create_employee")
+    else:
+        form = EmployeeForm()
+
+    return render(request, "employee/create_employee.html", {"form": form})
+
+
+# -------- EMPLOYEE LIST --------
+def employee_list(request):
+    employees = Employee.objects.all()
+    return render(request, "employee/employee_list.html", {"employees": employees})
+
+
+# -------- CREATE COURSE --------
+def create_course(request):
+    if request.method == "POST":
+        form = CourseForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Course Added Successfully!")
+            return redirect("create_course")
+    else:
+        form = CourseForm()
+
+    return render(request, "employee/create_course.html", {"form": form})
+
+#-----------Course List------------
+def course_list(request):
+    courses = Course.objects.all()
+    return render(request, "employee/course_list.html", {"courses": courses})
+
+
+def create_department(request):
+    if request.method == "POST":
+        form = DepartmentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Department Added Successfully!")
+            return redirect("create_department")
+    else:
+        form = DepartmentForm()
+
+    return render(request, "employee/create_department.html", {"form": form})
+
+
+def department_list(request):
+    departments = Department.objects.all()
+    return render(request, "employee/department_list.html", {"departments": departments})
+
+
+
+
+# -------- CREATE PROJECT --------
+def create_project(request):
+    if request.method == "POST":
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Project Added Successfully!")
+            return redirect("create_project")
+    else:
+        form = ProjectForm()
+
+    return render(request, "employee/create_project.html", {"form": form})
+
+
+# -------- PROJECT LIST --------
+def project_list(request):
+    projects = Project.objects.all()
+    return render(request, "employee/project_list.html", {"projects": projects})
 
