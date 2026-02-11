@@ -1,0 +1,96 @@
+<h2>Age > 23</h2>
+{% for e in age_gt %} {{ e.name }} {{ e.age }} <br> {% endfor %}
+
+<h2>Age ≥ 23</h2>
+{% for e in age_gte %} {{ e.name }} {{ e.age }} <br> {% endfor %}
+
+<h2>Salary Ascending</h2>
+{% for e in salary_asc %} {{ e.name }} {{ e.salary }} <br> {% endfor %}
+
+<h2>Salary Descending</h2>
+{% for e in salary_desc %} {{ e.name }} {{ e.salary }} <br> {% endfor %}
+
+<h2>Age < 28</h2>
+{% for e in age_lt %}
+  {{ e.name }} {{ e.age }} <br>
+{% empty %}
+  No data found
+{% endfor %}
+
+<h2>Age ≤ 28</h2>
+
+{% for e in age_lte %}
+    {{ e.name }} — {{ e.age }} <br>
+{% empty %}
+    No employee found
+{% endfor %}
+
+
+<h2>Post = Developer</h2>
+
+{% for e in developer_emp %}
+    {{ e.name }} | {{ e.age }} | {{ e.salary }} | {{ e.post }} <br>
+{% empty %}
+    No Developer Found
+{% endfor %}
+
+
+
+<h2>Name Starts With "R"</h2>
+{% for e in name_starts_r %}
+    {{ e.name }} | {{ e.age }} | {{ e.salary }} <br>
+{% empty %}
+    No Result Found <br>
+{% endfor %}
+
+
+<h2>Name Starts With "a" (Case Insensitive)</h2>
+{% for e in name_istarts_a %}
+    {{ e.name }} | {{ e.age }} | {{ e.salary }} <br>
+{% empty %}
+    No Result Found <br>
+{% endfor %}
+
+
+<h2>Name Ends With "a"</h2>
+{% for e in name_ends_a %}
+    {{ e.name }} | {{ e.age }} | {{ e.salary }} <br>
+{% empty %}
+    No Result Found <br>
+{% endfor %}
+
+
+<h2>Name Ends With "N" (Case Insensitive)</h2>
+{% for e in name_iends_n %}
+    {{ e.name }} | {{ e.age }} | {{ e.salary }} <br>
+{% empty %}
+    No Result Found <br>
+{% endfor %}
+
+
+
+<h2>Ayaan who is Developer</h2>
+
+{% for e in ayaan_dev %}
+    {{ e.name }} | {{ e.post }} | {{ e.age }} | {{ e.salary }} <br>
+{% empty %}
+    No Developer Named Ayaan Found <br>
+{% endfor %}
+
+
+<h2>Name IN (Ayaan, Riya)</h2>
+
+{% for e in name_in %}
+    {{ e.name }} | {{ e.age }} | {{ e.salary }} | {{ e.post }} <br>
+{% empty %}
+    No Matching Employees Found <br>
+{% endfor %}
+
+
+<h2>Salary Between 20000 and 50000</h2>
+
+{% for e in salary_range %}
+    {{ e.name }} | {{ e.salary }} | {{ e.post }} <br>
+{% empty %}
+    No Employees in this Salary Range <br>
+{% endfor %}
